@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //program1
+        function area(a,b,c)
+        {
+            let s=(a+b+c)/2
+            return Math.sqrt(s*((s-a)*(s-b)*(s-c)))
+        }
+        console.log("area of traingle is",area(5,6,7))
+    //program2
+        function leap(input)
+        {
+            if(input%400==0 || input%4==0 && input%100!=0)
+            {
+                console.log(input," is leap year")
+
+            }
+            else{
+                console.log(input," is not leap year")
+
+            }
+        }
+        console.log(leap(2000))
+        //program3
+        for(var y=2014;y<=2050;y++)
+        {
+            var d=new Date(y,0,1)
+            if(d.getDay()==0)
+            {
+                console.log("1 st january is a sunday in the year",y)        
+         }
+        }
+        //program4
+        today=new Date();
+        cmasday=new Date(today.getFullYear(), 11, 25);
+        if (today.getMonth()==11 && today.getDate()>25) 
+        {
+            cmasday.setFullYear(cmasday.getFullYear()+1); 
+        }  
+        var one_day=1000*60*60*24;
+        console.log(Math.ceil((cmasday.getTime()-today.getTime())/(one_day))+" days left until Christmas!");
+        //program5
+        let obj1=
+        {
+            name:"ammu",
+            rollno:503
+        }
+        let obj2=
+        {
+            name:"lalitha",
+            rollno:503
+        }
+        if (obj1.name === obj2.name && obj1.roll=== obj2.rpllno)
+        {
+            console.log("property values are matched in both onjects")
+
+        }
+        else{
+            console.log("property values are not  matched in both onjects")
+
+        }
+         //Program6
+         function sorting(inputStr) 
+         {
+             let charArr = inputStr.split('');
+             charArr.sort();
+             let sortedStr = charArr.join('');
+             return sortedStr;
+         }
+         let inputStr = 'club';
+         let result = sorting(inputStr);
+         console.log(result);
+ 
+         //Program7
+         function capitalizingWords(inputStr) 
+         {
+             const words = inputStr.split(' ');
+             const capitalizedWords = words.map(word => {return word.charAt(0).toUpperCase() + word.slice(1);});
+             return capitalizedWords.join(' ');
+         }
+         const inputString = 'web club';
+         const capitalizedStr = capitalizingWords(inputString);
+         console.log(capitalizedStr);  
+ 
+         //Program8
+         function findSecondLowestAndGreatest(arr) 
+         {
+             if (arr.length < 2) 
+             {
+                 return "Array should contain at least two numbers.";
+             }
+             let lowest = Infinity;
+             let secondLowest = Infinity;
+             let greatest = -Infinity;
+             let secondGreatest = -Infinity;
+             for (let num of arr) 
+             {
+                 if (num < lowest) 
+                 {
+                     secondLowest = lowest;
+                     lowest = num;
+                 } 
+                 else if (num < secondLowest && num !== lowest) 
+                 {
+                     secondLowest = num;
+                 }
+                 if (num > greatest) 
+                 {
+                     secondGreatest = greatest;
+                     greatest = num;
+                 } 
+                 else if (num > secondGreatest && num !== greatest) 
+                 {
+                     secondGreatest = num;
+                 }
+             }
+             return `${secondLowest},${secondGreatest}`;
+         }
+         const sampleArray = [1, 2, 3, 4, 5];
+         const rslt = findSecondLowestAndGreatest(sampleArray);
+         console.log(rslt); 
+
+
+    </script>
+    
+</body>
+</html>
